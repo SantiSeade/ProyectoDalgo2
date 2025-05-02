@@ -2,12 +2,12 @@ from collections import deque
 
 def encontrarCaminoOptimo(n: int, e: int, listaPlataformas: list):
     if e >= n: 
-        return "T" + str(n)
+        return "1 T" + str(n)
 
     # [nodo: (nodoAdyacente, movimiento)]
-    grafo = []
+    grafo = {}
     for i in range(n+1):
-        grafo.append([])
+        grafo[i] = []
 
     for i in range(n):
         if listaPlataformas[i] != -1:
@@ -26,7 +26,9 @@ def encontrarCaminoOptimo(n: int, e: int, listaPlataformas: list):
                 if ((i-salto >= 0) and (listaPlataformas[i-salto] != -1)):
                     grafo[i].append((i-salto, 'S-'))
 
+    #[(nodo, energía, movidas)]
     q = deque()
+    # [(nodo, energia)
     visitados = []
 
     q.append((0, e, []))
