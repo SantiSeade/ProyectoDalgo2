@@ -59,12 +59,12 @@ def encontrarCaminoOptimo(n: int, e: int, listaPlataformas: list):
 
                 if (energiaRestante >= costo):
                     nuevaEnergia = energiaRestante - costo
-                    move = "T" + str(costoReal)
+                    movida = "T" + str(costoReal)
 
                     estado = (destino, nuevaEnergia)
                     if (estado not in visitados):
                         visitados.append(estado)
-                        q.append((destino, nuevaEnergia, movidas + [move]))
+                        q.append((destino, nuevaEnergia, movidas+[movida]))
 
     return "NO SE PUEDE"
 
