@@ -4,7 +4,7 @@ def encontrarCaminoOptimo(n: int, e: int, listaPlataformas: list):
     if e >= n: 
         return "1 T" + str(n)
 
-    # [nodo: (nodoAdyacente, movimiento)]
+    # {nodo: [(nodoAdyacente, movimiento)]}
     grafo = {}
     for i in range(n+1):
         grafo[i] = []
